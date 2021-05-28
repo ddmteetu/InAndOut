@@ -23,5 +23,10 @@ namespace InAndOut.Controllers
             IEnumerable<Expense> objList = _db.Expenses;
             return View(objList);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
