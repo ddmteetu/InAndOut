@@ -24,9 +24,20 @@ namespace InAndOut.Controllers
             return View(objList);
         }
 
+        // GET-Create
         public IActionResult Create()
         {
             return View();
+        }
+
+        // POST-Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Expense obj)
+        {
+            _db.Expenses.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
