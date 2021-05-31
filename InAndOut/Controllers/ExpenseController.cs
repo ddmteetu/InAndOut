@@ -37,6 +37,7 @@ namespace InAndOut.Controllers
         {
             if (ModelState.IsValid)
             {
+                obj.ExpenseCategoryId = 3;
                 _db.Expenses.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
