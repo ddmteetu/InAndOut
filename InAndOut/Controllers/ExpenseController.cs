@@ -23,6 +23,12 @@ namespace InAndOut.Controllers
         public IActionResult Index()
         {
             IEnumerable<Expense> objList = _db.Expenses;
+
+            foreach(var obj in objList)
+            {
+                obj.ExpenseCategory = _db.ExpenseCategories.FirstOrDefault(u => u.Id == obj.ExpenseCategoryId);
+            }
+
             return View(objList);
         }
 
