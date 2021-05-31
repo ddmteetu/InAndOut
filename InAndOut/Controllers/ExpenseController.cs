@@ -34,6 +34,8 @@ namespace InAndOut.Controllers
                 Value = i.Id.ToString()
             });
 
+            ViewBag.CategoryDropDown = CategoryDropDown;
+
             return View();
         }
 
